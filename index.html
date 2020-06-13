@@ -1,0 +1,473 @@
+<?php> 
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="font/stylesheet.css">
+    <link rel="icon" href="img/fav.png" type="image/x-icon">
+    <title>quiz</title>
+</head>
+
+<body>
+    <div class="fullscreen-bg">
+        <div class="overlay">
+            <div class="container d-flex align-items-center">
+
+                <section id=quiz>
+                    <div class="container-quiz">
+                        <header id="bar">
+                            <p class="header-effect-p">Определение оптимального иммиграционного решения</p>
+                            <div class="progress-bar-title">Тест пройден на
+                                <span id="prosent"></span>
+                            </div>
+                            <div id="barProgress" class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0"
+                                    aria-valuemax="100" style="width: 0%">
+                                </div>
+                            </div>
+                        </header>
+                        <div class="container-quiz-area">
+                            <div id="contentItemZero" class="quiz-content">
+                                <h2 class="zero_headline">Чтобы определить, какой вариант иммиграционного решения
+                                    оптимален для Вашей
+                                    семьи, пройдите пожалуйста короткий тест</h2>
+                            </div> <!-- contentItemZero -->
+                            <div id="contentItemOne" class="quiz-content" style="display:none;">
+                                <h2>Кому нужен вид на жительство (резидентная виза), гражданство? Какой у Вас состав
+                                    семьи:</h2>
+                                <div class="check-Block">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="inputGroup">
+                                                <input type="radio" class="BtnOneShowOne option-input radio"
+                                                    id="radioOneTwo" onclick="selectCheckboxText(this,
+                            'radioOneTen',
+                            'userAnswerOne')" name="checboxScreenOne" value="Вдвоём с супругой/супругом." />
+                                                <label for="radioOneTwo">Вдвоём с супругой/супругом.</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="inputGroup">
+                                                <input type="radio" class="BtnOneShowOne option-input radio" onclick="selectCheckboxText(this,
+                            'radioOneTen',
+                            'userAnswerOne')" id="radioOneThree" name="checboxScreenOne"
+                                                    value="Вдвоём с супругой/супругом + несовершеннолетние дети." />
+                                                <label for="radioOneThree">Вдвоём с супругой/супругом +
+                                                    несовершеннолетние дети.</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="inputGroup">
+                                                <input type="radio" class="BtnOneShowOne option-input radio" onclick="selectCheckboxText(this,
+                            'radioOneTen',
+                            'userAnswerOne')" id="radioOneFour" name="checboxScreenOne" value="Вдвоём с супругой/супругом + несовершеннолетние и совершеннолетние
+                          дети." />
+                                                <label for="radioOneFour">Вдвоём с супругой/супругом +
+                                                    несовершеннолетние и совершеннолетние
+                                                    дети.</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="inputGroup">
+                                                <input type="radio" class="BtnOneShowOne option-input radio" onclick="selectCheckboxText(this,
+                            'radioOneTen',
+                            'userAnswerOne')" id="radioOneFive" name="checboxScreenOne" value="Вдвоём с супругой/супругом + несовершеннолетние дети + бабушка/бабушки
+                          и дедушка/дедушки." />
+                                                <label for="radioOneFive">Вдвоём с супругой/супругом +
+                                                    несовершеннолетние дети + бабушка/бабушки
+                                                    и дедушка/дедушки.</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="inputGroup button-container-1">
+                                                <input type="radio" class="BtnOneShowOne option-input radio"
+                                                    id="radioOneOne" onclick="selectCheckboxText(this,
+                            'radioOneTen',
+                            'userAnswerOne')" name="checboxScreenOne" value="Я один." />
+                                                <label for="radioOneOne">Я один.</label>
+                                            </div>
+                                        </div>
+                                    </div><!-- row -->
+                                </div> <!-- check-Block -->
+                            </div> <!-- contentItemOne -->
+                            <div id="contentItemTwo" class="quiz-content" style="display:none;">
+                                <h2>Какова Ваша цель?</h2>
+                                <div class="check-Block">
+                                    <div class="row">
+                                        <div class="country-input col-12">
+                                            <label class='country-label col-4' for="userAnswerTwo">Планируем переезд
+                                                в:</label>
+                                            <input onclick="selectText(this)" type="text" class="col-8 textboxRegion"
+                                                placeholder="введите название страны" id="userAnswerTwo">
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="inputGroup button-container-1">
+                                                <input type="radio" class="BtnOneShowTwo option-input radio"
+                                                    onclick="allRadio(this)" id="radioTwoOne" name="checboxScreenTwo"
+                                                    value="Не планируем менять свой образ жизни, большую часть времени проводим в
+                          России, но нужен документ позволяющий проживать в Европе и без ограничений
+                          передвигаться." />
+                                                <label for="radioTwoOne">Не планируем менять свой образ жизни, большую
+                                                    часть времени проводим в
+                                                    России, но нужен документ, позволяющий проживать в Европе и без
+                                                    ограничений
+                                                    передвигаться.</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="inputGroup">
+                                                <input type="radio" class="BtnOneShowTwo option-input radio"
+                                                    onclick="allRadio(this)" id="radioTwoThree" name="checboxScreenTwo"
+                                                    value="Нужно 2-ое гражданство. Где буду проживать – решу позже." />
+                                                <label for="radioTwoThree">Нужно 2-ое гражданство. Где буду проживать –
+                                                    решу позже.</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="inputGroup">
+                                                <input type="radio" class="BtnOneShowTwo option-input radio"
+                                                    onclick="allRadio(this)" id="radioTwoFour" name="checboxScreenTwo"
+                                                    value="Нужен вид на жительство, резидентная виза с правом работы на короткое
+                          время. Срочно." />
+                                                <label for="radioTwoFour">Нужен вид на жительство, резидентная виза с
+                                                    правом работы на короткое
+                                                    время. Срочно.</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="inputGroup">
+                                                <input type="radio" class="BtnOneShowTwo option-input radio"
+                                                    onclick="allRadio(this)" id="radioTwoFive" name="checboxScreenTwo"
+                                                    value="Нужен вид на жительство, резидентная виза любого типа на короткое
+                          время." />
+                                                <label for="radioTwoFive">Нужен вид на жительство, резидентная виза
+                                                    любого типа на короткое
+                                                    время.</label>
+                                            </div>
+                                        </div>
+                                    </div><!-- row -->
+                                </div> <!-- check-Block -->
+                            </div> <!-- contentItemTwo -->
+                            <div id="contentItemThree" class="quiz-content" style="display:none;">
+                                <h2>Какие у Вас временные рамки?</h2>
+                                <div class="check-Block">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="inputGroup button-container-1">
+                                                <input type="radio" class="BtnOneShowThree option-input radio"
+                                                    onclick="allRadio(this)" id="radioThreeOne"
+                                                    name="checboxScreenThree" value="Мне нужен 2-ой паспорт (гражданство) или ВНЖ/резидентная виза вчера!
+                          Срочно." />
+                                                <label for="radioThreeOne">Мне нужен 2-ой паспорт (гражданство) или
+                                                    ВНЖ/резидентная виза вчера!
+                                                    Срочно.</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="inputGroup">
+                                                <input type="radio" class="BtnOneShowThree option-input radio"
+                                                    onclick="allRadio(this)" id="radioThreeTwo"
+                                                    name="checboxScreenThree" value="Я не спешу, но хочу начать процесс, чтобы иметь ВНЖ/Гражданство в
+                          будущем." />
+                                                <label for="radioThreeTwo">Я не спешу, но хочу начать процесс, чтобы
+                                                    иметь ВНЖ/Гражданство в
+                                                    будущем.</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="inputGroup">
+                                                <input type="radio" class="BtnOneShowThree option-input radio"
+                                                    onclick="allRadio(this)" id="radioThreeThree"
+                                                    name="checboxScreenThree" value="Хочу получить 2ой паспорт (гражданство) или ВНЖ/резидентная визу в
+                          течение 3-6 месяцев." />
+                                                <label for="radioThreeThree">Хочу получить 2ой паспорт (гражданство) или
+                                                    ВНЖ/резидентная визу в
+                                                    течение 3-6 месяцев.</label>
+                                            </div>
+                                        </div>
+                                    </div><!-- row -->
+                                </div> <!-- check-Block -->
+                            </div> <!-- contentItemThree -->
+
+                            <div id="contentItemFour" class="quiz-content" style="display:none;">
+                                <h2>Некоторые страны не признают двойное гражданство. Готовы ли Вы рассматривать
+                                    иммиграцию в такие страны? Соответственно, Вам придётся отказаться от Вашего
+                                    теперешнего гражданства.</h2>
+                                <div class="check-Block">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="inputGroup button-container-1">
+                                                <input type="radio" class="BtnOneShowFour option-input radio"
+                                                    onclick="allRadio(this)" id="radioFourOne" name="checboxScreenFour"
+                                                    value="Да" />
+                                                <label for="radioFourOne">ДА, готов отказаться в дальнейшем</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="inputGroup">
+                                                <input type="radio" class="BtnOneShowFour option-input radio"
+                                                    onclick="allRadio(this)" id="radioFourTwo" name="checboxScreenFour"
+                                                    value="Нет" />
+                                                <label for="radioFourTwo">НЕТ, не планирую отказываться от родного
+                                                    гражданства.</label>
+                                            </div>
+                                        </div>
+                                    </div><!-- row -->
+                                </div> <!-- check-Block -->
+                            </div> <!-- contentItemFive -->
+
+                            <div id="contentItemFive" class="quiz-content" style="display:none;">
+                                <h2>Имеются ли у Вас какие то основания для получения резидентной визы/вида на
+                                    жительства или 2-ого
+                                    гражданства?</h2>
+                                <p class="someCheckbox">Можно выбрать несколько</p>
+                                <div class="check-Block">
+                                    <div class="row">
+                                        <div class="col-md-6 col-12">
+                                            <div class="inputGroup button-container-1">
+                                                <input type="checkbox" class="BtnOneShowFive option-input radio"
+                                                    onclick="pageRadioFive(this)" id="radioFiveOne"
+                                                    name="checboxScreenFive"
+                                                    value="Никаких оснований нет, сделайте всё под ключ." />
+                                                <label for="radioFiveOne" class="labelCheckbox
+                        spehialFive">
+                                                    Никаких оснований нет, сделайте всё под ключ.</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="inputGroup">
+                                                <input type="checkbox" class="BtnOneShowFive option-input radio"
+                                                    onclick="pageRadioFive(this)" id="radioFiveTwo"
+                                                    name="checboxScreenFive"
+                                                    value="У меня есть недвижимость за рубежом." />
+                                                <label for="radioFiveTwo" class="labelCheckbox">
+                                                    У меня есть недвижимость за рубежом.</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="inputGroup">
+                                                <input type="checkbox" class="BtnOneShowFive option-input radio"
+                                                    onclick="pageRadioFive(this)" id="radioFiveThree"
+                                                    name="checboxScreenFive" value="Я зачислен в учебное заведение." />
+                                                <label for="radioFiveThree" class="labelCheckbox">
+                                                    Я зачислен в учебное заведение.</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="inputGroup">
+                                                <input type="checkbox" class="BtnOneShowFive option-input radio"
+                                                    onclick="pageRadioFive(this)" id="radioFiveFour"
+                                                    name="checboxScreenFive" value="У меня есть бизнес за рубежом." />
+                                                <label for="radioFiveFour" class="labelCheckbox">
+                                                    У меня есть бизнес за рубежом.</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="inputGroup">
+                                                <input type="checkbox" class="BtnOneShowFive option-input radio"
+                                                    onclick="pageRadioFive(this)" id="radioFiveFive"
+                                                    name="checboxScreenFive" value="У меня есть супруг – иностранец." />
+                                                <label for="radioFiveFive" class="labelCheckbox">
+                                                    У меня есть супруг – иностранец.</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="inputGroup">
+                                                <input type="checkbox" class="BtnOneShowFive option-input radio"
+                                                    onclick="pageRadioFive(this)" id="radioFiveSix"
+                                                    name="checboxScreenFive"
+                                                    value="Мои предки были гражданами другой страны/имели другую национальность." />
+                                                <label for="radioFiveSix" class="labelCheckbox">
+                                                    Мои предки были гражданами другой страны/имели другую
+                                                    национальность.</label>
+                                            </div>
+                                        </div>
+                                    </div><!-- row -->
+                                </div> <!-- check-Block -->
+                            </div> <!-- contentItemSeven -->
+
+                            <div id="contentItemForm" class="quiz-content" style="display:none;">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h3 class="form-h2 ">Благодарим Вас за участие в тесте; для Вас доступно 2
+                                            иммиграционных решения.
+                                        </h3>
+                                        <p class="formP text-center">Оставьте пожалуйста Ваши Имя, телефон и мейл, и мы
+                                            направим Вам
+                                            предложения</p>
+                                    </div>
+                                    <div class="col-12">
+                                        <form id="formQuestion" method="POST" class="formMain">
+
+                                            <input type="tel" placeholder="Введите Ваш номер телефона" required
+                                                class="formOutput" id="phone" name="user_phone"
+                                                pattern="^(?=.*[0-9])[- +()0-9]+$">
+                                            <input type="email" placeholder="Введите вашу почту" required
+                                                class="formOutput" id="email" name="user_email"
+                                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+
+                                            <input type="hidden" name="saved" value="yes">
+
+                                            <textarea id="answerZero" rows="4" cols="55" name="answer_Zero"
+                                                style="display:none;"></textarea>
+
+                                            <textarea id="fieldActivity" rows="4" cols="55" name="field_Activity"
+                                                style="display:none;"></textarea>
+
+                                            <textarea id="currentStatus" rows="4" cols="55" name="current_Status"
+                                                style="display:none;"></textarea>
+
+                                            <textarea id="advertisingBudget" rows="4" cols="55"
+                                                name="advertising_Budget" style="display:none;"></textarea>
+
+                                            <textarea id="regionWork" rows="4" cols="55" name="region_Work"
+                                                style="display:none;"></textarea>
+
+                                            <textarea id="currentSite" rows="4" cols="55" name="current_Site"
+                                                style="display:none;"></textarea>
+
+                                            <textarea id="exceptDevelopment" rows="4" cols="55"
+                                                name="except_Development" style="display:none;"></textarea>
+
+                                            <button id="submit-form" type="submit" value="Получить предложения"
+                                                class="formBtn" onFocus="this.blur()">
+                                                Получить предложения</button>
+                                        </form>
+                                    </div>
+                                </div> <!-- row -->
+                            </div><!-- contentItemForm -->
+
+                        </div> <!-- container-quiz-area -->
+                        <div class="navigationBtn" id="navAll">
+                            <div class="row">
+                                <div class="col-4">
+                                    <button id="back" style="display:none;" class="navBtn navBtnOne"
+                                        onFocus="this.blur()">
+                                        <!-- style="display:none;" -->
+                                        <img src="img/left.svg" alt="Назад">Назад</button>
+                                </div>
+                                <div class="col-8">
+                                    <button id="onward" class="navBtn navBtnTwo" onFocus="this.blur()" disabled>
+                                        <!-- disabled onFocus="this.blur()" -->
+                                        Начать тест<img src="img/right.svg" alt="дальше">
+                                    </button>
+                                </div>
+                            </div>
+                        </div> <!-- navigationBtn -->
+                    </div> <!-- container-quiz -->
+
+                </section>
+            </div> <!-- container -->
+        </div> <!-- overlay -->
+
+        <video loop muted autoplay poster="video/space.jpg" class="fullscreen-bg-video">
+            <source src="video/space.mp4" type="video/mp4">
+            <source src="video/space.webm" type="video/webm">
+        </video>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/quiz.js"> </script>
+
+    <script src="js/jquery.maskedinput.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $("#formQuestion").submit(function() {
+            $("#submit-form").prop('disabled', true);
+            $.ajax({
+                type: "POST",
+                url: "rest.php",
+                data: $(this).serialize()
+            });
+            return false;
+        });
+    });
+    </script>
+
+    <script>
+    buttonOnAndOff(1);
+    $('#onward').click(function(e) {
+        $('#onward').html('Следующий вопрос<img src="img/right.svg" alt="дальше" >');
+    });
+    $('.contry')
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script>
+    let url_utm = window.location.href;
+    if (url_utm.match(/utm/)) {
+        var cookie = $.cookie("utm_bcip");
+        if (cookie == null) {
+            $.cookie('utm_bcip', null);
+            //let url_utm = window.location.href;
+            let utm_obj = getAllUrlParams(url_utm);
+            $.cookie("utm_bcip", JSON.stringify(utm_obj), {
+                expires: 1,
+                path: "/"
+            });
+
+            //Функция озвлечения GET параметров
+            function getAllUrlParams(url) {
+                // извлекаем строку из URL или объекта window
+                var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+                queryString = decodeURI(queryString);
+                // объект для хранения параметров
+                var obj = {};
+                // если есть строка запроса
+                if (queryString) {
+                    // данные после знака # будут опущены
+                    queryString = queryString.split('#')[0];
+                    // разделяем параметры
+                    var arr = queryString.split('&');
+                    for (var i = 0; i < arr.length; i++) {
+                        // разделяем параметр на ключ => значение
+                        var a = arr[i].split('=');
+                        // обработка данных вида: list[]=thing1&list[]=thing2
+                        var paramNum = undefined;
+                        var paramName = a[0].replace(/\[\d*\]/, function(v) {
+                            paramNum = v.slice(1, -1);
+                            return '';
+                        });
+                        // передача значения параметра ('true' если значение не задано)
+                        var paramValue = typeof(a[1]) === 'undefined' ? true : a[1];
+                        // преобразование регистра
+                        paramName = paramName.toLowerCase();
+                        paramValue = paramValue.toLowerCase();
+                        // если ключ параметра уже задан
+                        if (obj[paramName]) {
+                            // преобразуем текущее значение в массив
+                            if (typeof obj[paramName] === 'string') {
+                                obj[paramName] = [obj[paramName]];
+                            }
+                            // если не задан индекс...
+                            if (typeof paramNum === 'undefined') {
+                                // помещаем значение в конец массива
+                                obj[paramName].push(paramValue);
+                            }
+                            // если индекс задан...
+                            else {
+                                // размещаем элемент по заданному индексу
+                                obj[paramName][paramNum] = paramValue;
+                            }
+                        }
+                        // если параметр не задан, делаем это вручную
+                        else {
+                            obj[paramName] = paramValue;
+                        }
+                    }
+                }
+                return obj;
+            }
+        }
+    }
+    </script>
+</body>
+
+</html>
